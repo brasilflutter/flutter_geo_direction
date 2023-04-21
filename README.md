@@ -1,5 +1,5 @@
 
-# GeoRouter
+# GeoDirection
 Um pacote Flutter que usa a API do Google Maps para obter rotas entre coordenadas geográficas. Ele retorna uma lista de pontos LatLng que pode ser usada para renderizar uma rota no Google Maps.
 
 ## Instalação
@@ -42,8 +42,8 @@ class _HomeViewState extends State<HomeView> {
 
   List<LatLng> polylineCoordinates = [];
   void getPolyPoints() async {
-    final geoRouter = GeoRouter();
-    final result = await geoRouter.getDirectionsBetweenCoordinates(
+    final geoDirection = GeoDirection();
+    final result = await geoDirection.getDirectionsBetweenCoordinates(
       request: GeoRequestDto(
         googleApiKey: "YOUR_API_KEY",
         origin: PointLatLngDto(
