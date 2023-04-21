@@ -1,6 +1,6 @@
 name: geo_router
 description: A package to find routes between geolocation points.
-version: 0.0.1
+version: 0.0.2
 homepage:
 
 environment:

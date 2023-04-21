@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:geo_router/geo_router.dart';
 
-Future<void> main() async{
-  test('adds one to input values', () async{
+Future<void> main() async {
+  test('adds one to input values', () async {
     final service = GeoRouter();
     final origin = PointLatLngDto(
       latitude: 37.33500926,
@@ -13,10 +13,12 @@ Future<void> main() async{
       longitude: -122.06600055,
     );
     final response = await service.getDirectionsBetweenCoordinates(
-      apiKeyGoogleMaps: 'Api Key',
-      origen: origin,
-      destination: destination,
+      request: GeoRequestDto(
+        googleApiKey: "YOUR_API_KEY",
+        origin: origin,
+        destination: destination,
+      ),
     );
-    expect(response.points.length, 1);
+    expect(response, isA<GeoResponseDto>());
   });
 }

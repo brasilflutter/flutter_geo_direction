@@ -16,11 +16,11 @@ class GeoRequestDto {
     required this.googleApiKey,
     required this.origin,
     required this.destination,
-    required this.travelMode,
-    required this.wayPoints,
-    required this.avoidHighways,
-    required this.avoidTolls,
-    required this.avoidFerries,
-    required this.optimizeWaypoints,
+    this.travelMode = TravelModeEnum.driving,
+    this.wayPoints = const [],
+    this.avoidHighways = false,
+    this.avoidTolls = false,
+    this.avoidFerries = true,
+    this.optimizeWaypoints = false,
   });
 }
