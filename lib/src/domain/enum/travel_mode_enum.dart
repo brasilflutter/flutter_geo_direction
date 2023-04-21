@@ -1,0 +1,1 @@
+enum TravelModeEnum { driving, bicycling, transit, walking }
