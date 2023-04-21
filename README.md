@@ -6,7 +6,7 @@ Um pacote Flutter que usa a API do Google Maps para obter rotas entre coordenada
 Adicione esta linha ao pubspec.yaml do seu projeto:
 ```
 dependencies:
-  geo_router: ^0.0.2
+  geo_direction: ^0.0.2
 ```
 E rode o seguinte comando:
 ```
