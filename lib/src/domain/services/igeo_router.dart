@@ -1,4 +1,4 @@
-import '../../../geo_router.dart';
+import '../../../geo_direction.dart';
 
 abstract class IGeoRouter {
   Future<GeoResponseDto> getDirectionsBetweenCoordinates({

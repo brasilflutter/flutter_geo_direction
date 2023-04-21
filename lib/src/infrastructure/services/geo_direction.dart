@@ -9,7 +9,7 @@ import '../../utils/helpers/http_helper.dart';
 import '../adapters/geo_request_adapter.dart';
 import '../adapters/geo_response_adapter.dart';
 
-class GeoRouter implements IGeoRouter {
+class GeoDirection implements IGeoRouter {
   @override
   Future<GeoResponseDto> getDirectionsBetweenCoordinates({
     required GeoRequestDto request,

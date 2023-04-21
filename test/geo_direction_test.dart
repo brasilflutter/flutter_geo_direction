@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:geo_router/geo_router.dart';
+import 'package:geo_direction/geo_direction.dart';
 
 Future<void> main() async {
   test('adds one to input values', () async {
-    final service = GeoRouter();
+    final service = GeoDirection();
     final origin = PointLatLngDto(
       latitude: 37.33500926,
       longitude: -122.03272188,
