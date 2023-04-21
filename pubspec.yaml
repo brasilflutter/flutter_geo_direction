@@ -1,6 +1,6 @@
 name: geo_direction
 description: A package to find routes between geolocation points.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/viniciusoliverrs/flutter_geo_direction
 
 environment:
