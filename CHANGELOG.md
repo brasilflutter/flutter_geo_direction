@@ -9,3 +9,6 @@
 
 ## 0.0.4
     - Example with Image updated
+
+## 0.0.5
+    - Image updated
