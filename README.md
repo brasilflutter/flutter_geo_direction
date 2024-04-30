@@ -15,7 +15,7 @@ flutter pub get
 
 ## Screenshots
 
-![App Screenshot](https://github.com/viniciusoliverrs/flutter_geo_router/blob/main/screenshots/demo.png)
+![image](https://github.com/brasilflutter/flutter_geo_direction/assets/30914699/d875f514-2655-4fee-a15b-4e0ee9af433b)
 
 
 ## Exemplo usando em conjunto com o google_maps_flutter 
