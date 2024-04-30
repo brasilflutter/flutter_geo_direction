@@ -1,23 +1,33 @@
-# .github/workflows/publish.yml
-name: Publish to pub.dev
+name: Publish to pub.dev CI
 
 on:
   push:
     tags:
-    - 'v[0-9]+.[0-9]+.[0-9]+*' # tag pattern on pub.dev: 'v{{version}'
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
 
-# Publish using custom workflow
 jobs:
-  publish:
-    permissions:
-      id-token: write # Required for authentication using OIDC
+  build:
+    # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: dart-lang/setup-dart@v1
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+
       - name: Install dependencies
         run: flutter pub get
-      # Here you can insert custom steps you need
-      # - run: dart tool/generate-code.dart
+
+      - name: Install dependencies
+        run: flutter pub get
+
       - name: Publish
         run: flutter pub publish --force
