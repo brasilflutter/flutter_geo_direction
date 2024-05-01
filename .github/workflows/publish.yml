@@ -27,5 +27,23 @@ jobs:
             "expiration": 1570721159347
           }
           EOF
-      - name: Publish package
-        run: pub publish -f
+
+
+      - name: Setup Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Install dependencies
+        run: flutter pub publish -F
+
+      # - name: Publish package
+      #   run: pub publish -f
