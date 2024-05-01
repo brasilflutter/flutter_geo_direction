@@ -13,8 +13,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+
       - name: Install dependencies
-        run: flutter upgrade
+        run: upgrade
 
       - name: Setup credentials
         run: |
