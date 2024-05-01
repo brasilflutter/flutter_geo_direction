@@ -14,9 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Install dependencies
-        run: upgrade
-
       - name: Setup credentials
         run: |
           mkdir -p ~/.pub-cache 
