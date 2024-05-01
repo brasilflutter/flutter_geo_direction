@@ -3,28 +3,31 @@ name: Publish to pub.dev CI
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+*'
+      - "v[0-9]+.[0-9]+.[0-9]+*"
 
 jobs:
   build:
-    # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
+    container:
+      image: google/dart:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Setup Java
-        uses: actions/setup-java@v1
-        with:
-          java-version: '12.x'
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v1
-        with:
-          channel: 'stable'
-
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Publish
-        run: dart pub publish --force
+      - name: Setup credentials
+        run: |
+          mkdir -p ~/.pub-cache 
+          cat <<EOF > ~/.pub-cache/credentials.json
+          {
+            "accessToken":"${{ secrets.OAUTH_ACCESS_TOKEN }}",
+            "refreshToken":"${{ secrets.OAUTH_REFRESH_TOKEN }}",
+            "tokenEndpoint":"https://accounts.google.com/o/oauth2/token",
+            "scopes": [ "openid", "https://www.googleapis.com/auth/userinfo.email" ],
+            "expiration": 1570721159347
+          }
+          EOF
+      - name: Publish package
+        run: pub publish -f
