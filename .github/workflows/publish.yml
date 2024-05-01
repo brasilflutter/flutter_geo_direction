@@ -26,8 +26,6 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Publish
-        run: dart pub publish --force
   publish:
     permissions:
       id-token: write # Required for authentication using OIDC
