@@ -14,8 +14,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: Install dependencies
-        run: flutter pub get
+      - name: Publish package
+        run: pub get
 
       - name: Setup credentials
         run: |
